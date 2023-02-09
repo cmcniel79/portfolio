@@ -25,7 +25,7 @@ export default function Work({ positions }) {
   const maxHeight = 1500;
   const ms_per_pixel = (endDate.getTime() - beginDate.getTime()) / maxHeight;
 
-  const dateStringOptions = { year: 'numeric', month: 'long' };
+  const dateStringOptions: Intl.DateTimeFormatOptions={ year: 'numeric', month: 'long' };
 
   const currPosition = positions[currPositionIndex];
   const currPositionStartDate = new Date(currPosition.start);
