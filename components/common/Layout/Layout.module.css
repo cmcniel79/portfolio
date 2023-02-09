@@ -1,0 +1,14 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex-grow: 1;
+    flex-shrink: 0;
+    background: var(--websiteBackgroundColor);
+}
+
+@media (--viewportMedium) {
+    .root {
+        min-height: 50vh;
+    }
+}

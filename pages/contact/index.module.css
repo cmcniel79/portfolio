@@ -1,0 +1,19 @@
+/* Contact Page */
+.contactPageImage {
+    width: 100%;
+    position: relative !important;
+    margin: 80px auto 0;
+}
+
+.monumentImage {
+    display: block;
+    object-fit: contain;
+    position: relative !important;
+    margin: 0 auto;
+    width: 100%;
+    height: unset !important;
+}
+
+@media (--viewportMedium) {
+
+}

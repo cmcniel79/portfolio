@@ -1,0 +1,25 @@
+.root {
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.socialMediaIcon {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    stroke: var(--websiteMainColorLight);
+    fill: var(--websiteMainColorLight);
+}
+
+.socialMediaIcon:hover {
+    stroke: var(--websiteMainColorDark);
+    fill: var(--websiteMainColorDark);
+}
+
+@media (--viewportMedium) {
+    .root {
+        width: 25vw;
+    }
+}

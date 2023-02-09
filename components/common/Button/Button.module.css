@@ -1,0 +1,58 @@
+.root {
+  /* Font */
+  font-family: 'poppins', Helvetica, Arial, sans-serif;
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+
+  /* Dimensions */
+  display: block;
+  width: 100%;
+  min-height: 59px;
+  margin: 0;
+
+  /* Padding is only for <a> elements where button styles are applied,
+		buttons elements should have zero padding */
+  padding: 17px 0 17px 0;
+
+  /* Borders */
+  border: solid 2px var(--websiteMainColorLight);
+  border-radius: 5px;
+
+  /* Colors */
+  background-color: var(--websiteBackgroundColor);
+  color: var(--matterColorBright);
+
+  /* Text */
+  text-align: center;
+  text-decoration: none;
+
+  /* Effects */
+  transition: all var(--transitionStyleButton);
+  cursor: pointer;
+}
+
+.root:hover,
+.root:focus {
+  outline: none;
+  background-color: var(--websiteMainColorLight);
+  text-decoration: none;
+  box-shadow: var(--boxShadowButton);
+  color: var(--matterColorBright);
+}
+
+.root:disabled {
+  background-color: var(--matterColorNegative);
+  color: var(--matterColorLight);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (--viewportMedium) {
+  .root {
+    min-height: 65px;
+    padding: 20px 0 20px 0;
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,61 @@
+.greeting {
+  color: var(--websiteMainColorLight);
+}
+
+.subheading {
+  text-align: center;
+}
+
+.resumeButton {
+  margin: auto;
+  width: 100%;
+}
+
+/* .image {
+    display: block;
+    object-fit: contain;
+    position: relative !important;
+    margin: 0 auto;
+    width: 100%;
+    height: unset !important;
+}
+
+.imageContainer {
+    width: 80%;
+    position: relative !important;
+    margin: 80px auto 0;
+}
+
+.imageContainer:hover .overlay {
+    opacity: .1;
+} */
+
+/* .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: var(--matterColorDark);
+    cursor: pointer;
+} */
+
+@media (--viewportMedium) {
+
+  .subheading {
+    text-align: left;
+  }
+
+  .resumeButton {
+    margin-top: 60px;
+    width: 35vw;
+  }
+
+  /* .image {
+        margin: auto 0;
+    } */
+}

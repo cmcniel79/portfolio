@@ -1,0 +1,119 @@
+.timelineDate,
+.positionCompany {
+  color: var(--websiteMainColorLight);
+}
+
+.timelineDate {
+  display: none;
+}
+
+.timelineContainer {
+  position: relative;
+  height: 500px;
+}
+
+.timeline {
+  /* display: none; */
+}
+
+.timelineTag {
+  /* display: none; */
+}
+
+.timelinePosition {
+  /* display: none; */
+}
+
+.positionButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.positionButton {
+  width: 30%;
+  margin: 20px 0;
+}
+
+.positionButton:focus {
+  background-color: var(--matterColorLightTransparent);
+}
+
+.positionDetailsPanel {
+  position: sticky;
+  bottom: 50%;
+  height: auto;
+  left: 0%;
+  width: 100%;
+}
+
+.positionDate {
+  color: var(--matterColorLight);
+  margin-top: 0;
+}
+
+.positionHeading {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.positionCompany {
+  display: block;
+  margin: 0 0 10px;
+}
+
+@media (--viewportMedium) {
+
+  .timelineContainer {
+    height: 1500px;
+  }
+
+  .timelineDate {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .timeline {
+    margin: 0 auto;
+    height: 1500px;
+    width: 0;
+    content: '';
+    position: absolute;
+    width: 6px;
+    top: 0;
+    bottom: 0;
+    margin-left: -3px;
+    background-color: white;
+    z-index: 2;
+  }
+
+  .timelineTag {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    margin: 0;
+    padding: 0 30px;
+    cursor: default;
+  }
+
+  .timelinePosition {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    max-width: 40%;
+  }
+
+  .positionButton {
+    width: 15%;
+  }
+
+  .positionDetailsPanel {
+    left: 45%;
+    width: 60%;
+  }
+
+  .positionCompany {
+    display: inline;
+  }
+}

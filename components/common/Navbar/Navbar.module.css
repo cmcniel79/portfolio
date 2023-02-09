@@ -1,0 +1,116 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--websiteBackgroundColor);
+}
+
+.logo {
+  /* Good aspect ratio should be less than 160/27 (width/height) */
+  /* NOTE: extremely wide logos, need special handling. */
+  width: 50px;
+  height: 50px;
+  margin: 20px 0 auto 20px;
+  stroke: var(--websiteMainColorLight);
+  fill: var(--websiteMainColorLight);
+}
+
+.logo:hover {
+  stroke: var(--websiteMainColorDark);
+  fill: var(--websiteMainColorDark);
+}
+
+.title {
+  width: 50%;
+  word-break: break-word;
+  margin: 20px 0 20px 10px;
+}
+
+.navLinksContainer {
+  display: none;
+}
+
+.navLink {
+  flex-shrink: 0;
+  padding: 5px 0;
+  height: 100%;
+  margin: auto 0;
+}
+
+.menu {
+  margin: 27px 20px auto 0;
+  /* Layout */
+  display: flex;
+  border-width: 0px;
+  background: var(--websiteBackgroundColor);
+  position: relative;
+}
+
+/* Hovers */
+.menu:enabled {
+  cursor: pointer;
+}
+
+.menu:enabled:hover,
+.menu:enabled:active {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.menu:disabled {
+  background-color: transparent;
+  cursor: auto;
+}
+
+.menuIcon {
+  fill: var(--websiteMainColorLight);
+  margin: auto;
+}
+
+.mobileLinksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border-top: solid 5px var(--websiteMainColor); */
+}
+
+.mobileLinks {
+  color: var(--matterColorBright);
+}
+
+.socialMedia {
+  margin-top: 40px;
+}
+
+@media (--viewportMedium) {
+  .root {
+    /* Size */
+    width: 100%;
+    position: sticky;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 40px;
+  }
+
+  .logo {
+    margin: 20px 0;
+  }
+
+  .navLinksContainer {
+    display: flex;
+    width: 45vw;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px 0;
+    height: 100%;
+  }
+
+  .menu {
+    display: none;
+  }
+}
