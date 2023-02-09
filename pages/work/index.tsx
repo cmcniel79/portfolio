@@ -33,8 +33,25 @@ export default function Work({ positions }) {
 
   const endDateTime = endDate.getTime();
 
+  const positionButtons = (
+    <div className={s.positionButtonsContainer}>
+      {positions.map(p => (
+        <Button
+          key={p.index}
+          className={classNames(currPositionIndex == p.index ? s.positionButtonSelected : null, s.positionButton)}
+          onClick={() => setCurrPositionIndex(p.index)}
+          onMouseDown={e => e.preventDefault()}
+          style={{ borderColor: p.color }}
+        >
+          <span style={{ color: p.color }}>{p.tag}</span>
+        </Button>
+      ))}
+    </div>
+  );
+
   const positionDetails = (
     <div className={s.positionDetailsPanel}>
+      {positionButtons}
       <h3 className={classNames(s.positionHeading, utilStyles.headingMd)}>
         {currPosition.position} <span className={s.positionCompany}>| {currPosition.company}</span>
       </h3>
@@ -52,43 +69,29 @@ export default function Work({ positions }) {
     </div>
   );
 
-  const positionButtons = (
-    <div className={s.positionButtonsContainer}>
-      {positions.map((p, i) => (
-        <Button
-          key={i}
-          className={s.positionButton}
-          onClick={() => setCurrPositionIndex(p.index)}
-          style={{ borderColor: p.color }}
-        >
-          <span style={{ color: p.color }}>{p.tag}</span>
-        </Button>
-      ))}
-    </div>
-  );
-
   const timeline = (
     <div className={s.timelineContainer}>
       <div className={s.timeline} />
-      {positions.map(entry => (
+      {positions.slice().reverse().map(p => (
         <div
-          key={entry.tag}
-          className={s.timelinePosition}
-          onMouseEnter={() => setCurrPositionIndex(entry.index)}
+          id={p.tag}
+          key={p.index}
+          className={classNames(s.timelinePosition, currPositionIndex == p.index ? s.timelinePositionSelected : null)}
+          onMouseEnter={() => setCurrPositionIndex(p.index)}
           style={{
-            backgroundColor: entry.color,
-            top: Math.round((endDateTime - entry.end) / ms_per_pixel),
-            height: Math.round((entry.end - entry.start) / ms_per_pixel),
-            width: Math.round((entry.end - entry.start) / (ms_per_pixel * 5))
+            backgroundColor: p.color,
+            top: Math.round((endDateTime - p.end) / ms_per_pixel),
+            height: Math.round((p.end - p.start) / ms_per_pixel),
+            width: Math.round((p.end - p.start) / (ms_per_pixel * 5))
           }}>
           <h2
             className={classNames(s.timelineTag, utilStyles.headingLg)}
             style={{
-              left: Math.round((entry.end - entry.start) / (ms_per_pixel * 5)),
-              backgroundColor: entry.color,
+              left: Math.round((p.end - p.start) / (ms_per_pixel * 5)) - 1,
+              backgroundColor: p.color,
             }}
           >
-            {entry.tag}
+            {p.tag}
           </h2>
         </div>
       )
@@ -97,14 +100,11 @@ export default function Work({ positions }) {
     </div>
   );
 
-  console.log(currPositionIndex);
-
   return (
     <div className={utilStyles.staticPageSection}>
       <h1 className={utilStyles.heading2Xl}>
         Experience
       </h1>
-      {positionButtons}
       <h2 className={classNames(s.timelineDate, utilStyles.headingLg)}>
         {endDate.toLocaleDateString(undefined, dateStringOptions)}
       </h2>
